@@ -5,15 +5,15 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      deployment: CHANGE_ME
+      deployment: <name of the deployment you want to allow traffic to (destination)>
   ingress:
     - from:
       - namespaceSelector:
           matchLabels:
-            network: CHANGE_ME
+            network: <namesapce of where the deployment or pod is sitting on>
         podSelector:
           matchLabels:
-            deployment: CHANGE_ME
+            deployment: <deployment name of the pod you want to talk to the other deployment (source)>
       ports:
-      - port: CHANGE_ME
-        protocol: CHANGE_ME
+      - port: <port number>
+        protocol: <define the protocol>
